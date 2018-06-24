@@ -24,7 +24,7 @@ program
     });
 
 program
-    .command("list <date>")
+    .command("list")
     .alias("l")
     .description('List all expenses sorted by date')
     .action(() => listExpenses());
