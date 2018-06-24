@@ -1,0 +1,9 @@
+# file: ~/.gitignore_global
+
+.idea/
+
+node_modules/
+server.js
+index.html
+
+
