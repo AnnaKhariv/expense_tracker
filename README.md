@@ -41,7 +41,7 @@ Remove All Expense (r, remove) - command removes all expenses from list.
 	$ expense_tracker remove
 	
 Total Amount (t <convertTo>, total <convertTo>) - command take a list of exchange rates from http://fixer.io, calculate the total amount of money spent and
-present it to user in specified currency, where \<convertTo\> — is the currency in which total amount of expenses presented. [not avalible]
+present it to user in specified currency, where \<convertTo\> — is the currency in which total amount of expenses presented. [not functional, calculate total amout for different currency].
 
 
 	$ expense_tracker total <convertTo>
