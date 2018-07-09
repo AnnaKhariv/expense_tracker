@@ -1,5 +1,7 @@
 # expense_tracker
-Personal expenses management application that allows users to track how much money have they spent. Uses Mongoose, Commander.js.
+Personal expenses management offline application that allows users to track how much money have they spent. 
+
+IMPORTANT! Uses Mongoose - make sure you have installed MongoDB!
 
 # Usage
 
@@ -23,7 +25,7 @@ Help (-h, -help)- command shows information about expense_tracker.
 Command accepts following parameters:</br>
 \<date\> — is the date when expense occurred in format YYYY-MM-DD. </br>
 \<amount\> — is an amount of money spent. </br>
-\<currency\>  — the currency in which expense occurred in options: USD, UAH, PLN, EUR. </br>
+\<currency\>  — the currency in which expense occurred. </br>
 \<product\> — is the name of product purchased. </br>
 
 	$ expense_tracker add <date> <amount> <currency> <product>
@@ -41,7 +43,7 @@ Remove All Expense (r, remove) - command removes all expenses from list.
 	$ expense_tracker remove
 	
 Total Amount (t <convertTo>, total <convertTo>) - command take a list of exchange rates from http://fixer.io, calculate the total amount of money spent and
-present it to user in specified currency, where \<convertTo\> — is the currency in which total amount of expenses presented. [not functional, calculate total amout for different currency].
+present it to user in specified currency, where \<convertTo\> — is the currency in which total amount of expenses presented.
 
 
 	$ expense_tracker total <convertTo>
