@@ -4,13 +4,10 @@
   "description": "Personal expenses management application that allows users to track how much money have they spent.",
   "main": "index.js",
   "preferGlobal": true,
-  "bin": "./commands.js",
+  "bin": "./index.js",
   "dependencies": {
-    "commander": "^2.15.1",
     "internet-available": "^1.0.0",
-    "mongodb": "^3.0.10",
     "mongoose": "^5.1.6",
-    "request": "^2.87.0",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {},

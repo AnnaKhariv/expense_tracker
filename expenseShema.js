@@ -19,7 +19,6 @@ const expensesShema = new Schema({
     },
     currency: {
         type: String, uppercase: true,
-        enum: ["EUR", "USD", "UAH", "PLN"],
         default: "EUR",
         required: [true, "Currency required!"],
     },
