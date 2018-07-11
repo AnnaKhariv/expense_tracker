@@ -1,21 +1,15 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
 
 const apiShema = new Schema({
 
-    convertTo: {
-        type: String, uppercase: true,
-        enum: ["EUR", "USD", "UAH", "PLN"],
-        default: "EUR"
-    },
-    totalSum: {
-        type: Number
-    }
+    base: String,
+    date: Date,
+    rates: {}
 
 });
 
-const ApiSchema = mongoose.model("apiShema", apiShema);
+const ApiSchema = mongoose.model('apiShema', apiShema);
 
 module.exports = ApiSchema;
 

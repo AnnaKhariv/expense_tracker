@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 const program = require("commander");
 
 const {
@@ -45,6 +46,8 @@ program
     .command('total <convertTo>')
     .alias('t')
     .description('Total Amount Of Money Spend with currency converter')
-    .action((convertTo) => totalExpenses(convertTo));
+    .action(convertTo => totalExpenses(convertTo));
+
+
 
 program.parse(process.argv);

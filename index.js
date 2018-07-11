@@ -1,26 +1,19 @@
-
-const mongoose = require("mongoose");
-
-
+'use strict';
+const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://localhost:27017/products", function (err) {
+mongoose.connect('mongodb://127.0.0.1:27017/products', function (err) {
 
-    if(err){
-        return console.log(err);
-    } else{
-        console.info("Connect to: mongodb://localhost:27017/products");
-    }
+    if (err) throw err;
+    console.log('Successfully connected to mongodb://localhost:27017/products');
 
 });
 
-const Expenses = require("./expenseShema");
-const Api = require("./apiShema");
-
+const Expenses = require('./expenseShema');
+const getApi = require('./getApi');
 
 const addExpense = (expense) => {
     Expenses.create(expense)
-
 
         .then(expense => {
             console.info(expense);
@@ -31,17 +24,17 @@ const addExpense = (expense) => {
             console.log(err);
             mongoose.disconnect();
         });
-    }
+}
 
 
 const listExpenses = () => {
-    Expenses.find().sort({"dateInput": -1})
+    Expenses.find().sort({'dateInput': -1})
         .then(expense => {
             console.info(expense);
             console.info(`${expense.length} expenses`);
             mongoose.disconnect();
         });
-    }
+}
 
 const clearExpense = (dateInput) => {
     Expenses.remove({dateInput})
@@ -49,7 +42,7 @@ const clearExpense = (dateInput) => {
             console.info('Expenses By Chosen Date Cleared');
             mongoose.disconnect();
         });
-    }
+}
 
 const removeExpenses = () => {
     Expenses.remove()
@@ -57,33 +50,14 @@ const removeExpenses = () => {
             console.info('Remove All');
             mongoose.disconnect();
         });
-    }
+}
 
 const totalExpenses = (convertTo) => {
-    Api.create({convertTo})
-        .then(() => {
-            console.info('Currency Chosen');
-            mongoose.disconnect();
-        });
+    convertTo = convertTo.toUpperCase();
+    exports.convertTo = convertTo;
+    getApi.checkConnection();
 
-    Expenses.aggregate([
-
-            {"$group": {
-                    "_id": "$currency",
-                    "sum": { "$sum":  "$amount"}
-                }}
-
-        ],
-        function (err, result) {
-            if (err) {
-                console.log(err);
-                return;
-            }
-            console.log(result);
-        });
-    }
-
-
+}
 
 module.exports = {
     addExpense,
@@ -91,7 +65,7 @@ module.exports = {
     clearExpense,
     removeExpenses,
     totalExpenses,
-
 };
+
 
 
