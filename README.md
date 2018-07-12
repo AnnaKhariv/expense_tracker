@@ -16,9 +16,9 @@ Install the dependencies
 	
 # Commands
 
-Help (-h, -help)- command shows information about expense_tracker.
+Help (--help)- command shows information about expense_tracker.
 
-	$ expense_tracker -help
+	$ expense_tracker --help
 	
 <b>Add New Expense (a \<date\> \<amount\> \<currency\> \<product\>, add \<date\> \<amount\> \<currency\> \<product\>)</b> - command adds expense entry to the list of user expenses. </br> 
 </br>
@@ -30,23 +30,23 @@ Command accepts following parameters:</br>
 
 	$ expense_tracker add <date> <amount> <currency> <product>
 	
-List Expenses By Date (-l , -list ) -command shows the list of all expenses sorted by date decrease.
+List Expenses By Date (--list ) -command shows the list of all expenses sorted by date decrease.
 
-	$ expense_tracker list 
+	$ expense_tracker --list 
 	
-Clear Expense By Chosen Date (c \<date\> , clear \<date\>) - command removes all expenses for specified date, where \<date\> — is the date for which all expenses removed.
+Clear Expense By Chosen Date (--clear \<date\>) - command removes all expenses for specified date, where \<date\> — is the date for which all expenses removed.
 
-	$ expense_tracker clear <date> 
+	$ expense_tracker --clear <date> 
 	
-Remove All Expense (r, remove) - command removes all expenses from list.
+Remove All Expense (--remove) - command removes all expenses from list.
 
-	$ expense_tracker remove
+	$ expense_tracker --remove
 	
-Total Amount (t <convertTo>, total <convertTo>) - command take a list of exchange rates from http://fixer.io, calculate the total amount of money spent and
+Total Amount (--total <convertTo>) - command take a list of exchange rates from http://fixer.io, calculate the total amount of money spent and
 present it to user in specified currency, where \<convertTo\> — is the currency in which total amount of expenses presented.
 
 
-	$ expense_tracker total <convertTo>
+	$ expense_tracker --total <convertTo>
 	
 
 	
